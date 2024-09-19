@@ -251,54 +251,10 @@ class _SigninWidgetState extends State<SigninWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Theme(
-                      data: ThemeData(
-                        checkboxTheme: CheckboxThemeData(
-                          visualDensity: VisualDensity.compact,
-                          materialTapTargetSize:
-                              MaterialTapTargetSize.shrinkWrap,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                        ),
-                        unselectedWidgetColor:
-                            FlutterFlowTheme.of(context).secondaryText,
-                      ),
-                      child: Checkbox(
-                        value: _model.checkboxValue ??= false,
-                        onChanged: (newValue) async {
-                          safeSetState(() => _model.checkboxValue = newValue!);
-                        },
-                        side: BorderSide(
-                          width: 2,
-                          color: FlutterFlowTheme.of(context).secondaryText,
-                        ),
-                        activeColor: FlutterFlowTheme.of(context).primary,
-                        checkColor: FlutterFlowTheme.of(context).info,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'I have read and agree to the Privacy policy\nand Terms of Service',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Poppins',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: (_model.checkboxValue == null)
+                  onPressed: ((_model.email1TextController.text == '') &&
+                          (_model.pass1TextController.text == ''))
                       ? null
                       : () async {
                           GoRouter.of(context).prepareAuthEvent();

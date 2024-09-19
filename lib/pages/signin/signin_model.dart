@@ -14,8 +14,6 @@ class SigninModel extends FlutterFlowModel<SigninWidget> {
   TextEditingController? pass1TextController;
   late bool pass1Visibility;
   String? Function(BuildContext, String?)? pass1TextControllerValidator;
-  // State field(s) for Checkbox widget.
-  bool? checkboxValue;
 
   @override
   void initState(BuildContext context) {

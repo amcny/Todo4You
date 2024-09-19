@@ -98,10 +98,19 @@ class _EditTaskWidgetState extends State<EditTaskWidget> {
                             ),
                       ),
                     ),
-                    Icon(
-                      Icons.close_rounded,
-                      color: FlutterFlowTheme.of(context).secondaryText,
-                      size: 30.0,
+                    InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.close_rounded,
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        size: 30.0,
+                      ),
                     ),
                   ],
                 ),

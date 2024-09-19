@@ -78,10 +78,19 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
                         ),
                   ),
                 ),
-                Icon(
-                  Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).secondaryText,
-                  size: 30.0,
+                InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    Navigator.pop(context);
+                  },
+                  child: Icon(
+                    Icons.close_rounded,
+                    color: FlutterFlowTheme.of(context).secondaryText,
+                    size: 30.0,
+                  ),
                 ),
               ],
             ),
@@ -361,6 +370,7 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
                           dueDate: _model.datePicked,
                           uid: currentUserUid,
                         ));
+                    Navigator.pop(context);
                   },
                   text: 'Add Task',
                   icon: const FaIcon(

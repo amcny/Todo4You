@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'homepage_model.dart';
 export 'homepage_model.dart';
@@ -58,7 +59,11 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                         .resolve(Directionality.of(context)),
                     child: GestureDetector(
                       onTap: () => FocusScope.of(dialogContext).unfocus(),
-                      child: const AddTaskWidget(),
+                      child: const SizedBox(
+                        height: 400.0,
+                        width: 345.0,
+                        child: AddTaskWidget(),
+                      ),
                     ),
                   );
                 },
@@ -176,6 +181,14 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                       }
                       List<TasksRecord> listViewTasksRecordList =
                           snapshot.data!;
+                      if (listViewTasksRecordList.isEmpty) {
+                        return Center(
+                          child: SvgPicture.asset(
+                            'assets/images/No_data.svg',
+                            fit: BoxFit.contain,
+                          ),
+                        );
+                      }
 
                       return ListView.separated(
                         padding: const EdgeInsets.fromLTRB(
@@ -317,10 +330,14 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                                             FocusScope.of(
                                                                     dialogContext)
                                                                 .unfocus(),
-                                                        child: EditTaskWidget(
-                                                          docRef:
-                                                              listViewTasksRecord
-                                                                  .reference,
+                                                        child: SizedBox(
+                                                          height: 400.0,
+                                                          width: 345.0,
+                                                          child: EditTaskWidget(
+                                                            docRef:
+                                                                listViewTasksRecord
+                                                                    .reference,
+                                                          ),
                                                         ),
                                                       ),
                                                     );
