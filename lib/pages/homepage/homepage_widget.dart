@@ -237,7 +237,7 @@ class _HomepageWidgetState extends State<HomepageWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            '${listViewTasksRecord.priorityNum.toString()} ${listViewTasksRecord.taskName}',
+                                            '${listViewTasksRecord.priorityNum.toString()}) ${listViewTasksRecord.taskName}',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
