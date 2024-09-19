@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "165815115439",
+    "project_id": "todo4-you",
+    "storage_bucket": "todo4-you.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165815115439:android:09b1f738d47792d645fe5a",
+        "android_client_info": {
+          "package_name": "com.todo4you.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrqAC8aCCq19P_pSI38onYp0RpNBAsj5Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
